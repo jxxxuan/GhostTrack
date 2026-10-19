@@ -1,6 +1,8 @@
 services:
-  ghosttrack:
+  ghosttrack-web:
     build: .
-    image: ghosttrack:latest
-    stdin_open: true  # 保持标准输入打开，对应 docker run 的 -i
-    tty: true         # 分配伪终端，对应 docker run 的 -t
+    image: ghosttrack-web:latest
+    container_name: ghosttrack-web
+    ports:
+      - "5000:5000"
+    restart: unless-stopped

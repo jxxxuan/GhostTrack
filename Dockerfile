@@ -9,5 +9,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # 复制项目所有文件
 COPY . .
 
-# GhostTrack 是一个交互式 CLI 工具，启动直接运行脚本
-ENTRYPOINT ["python", "GhostTR.py"]
+# 暴露 Web 端口
+EXPOSE 5000
+
+# 默认启动 Web 前端服务
+CMD ["python", "web_app.py"]
