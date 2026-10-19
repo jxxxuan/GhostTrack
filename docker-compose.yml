@@ -1,0 +1,6 @@
+services:
+  ghosttrack:
+    build: .
+    image: ghosttrack:latest
+    stdin_open: true  # 保持标准输入打开，对应 docker run 的 -i
+    tty: true         # 分配伪终端，对应 docker run 的 -t
